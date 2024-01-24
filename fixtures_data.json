@@ -1,0 +1,125 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Автомобили",
+      "description": "Легковые автомобили с бензиновым и дизельным двигателем"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Мотоциклы",
+      "description": "Двухколесные ТС с объемом двигателя более 250 мл3"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Лодки",
+      "description": "Водные ТС"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Грузовики",
+      "description": "Автомобили с бензиновым и дизельным двигателем массой более 3,5 тонн"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Жигули",
+      "description": "Ведро с болтами",
+      "image": "",
+      "category": 1,
+      "price": 20000,
+      "create_date": "2024-01-20T07:35:53.976Z",
+      "change_date": "2024-01-20T07:35:53.976Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Волга",
+      "description": "Большое и комфортное ведро с болтами",
+      "image": "",
+      "category": 1,
+      "price": 35000,
+      "create_date": "2024-01-20T07:36:47.652Z",
+      "change_date": "2024-01-20T07:36:47.652Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Урал",
+      "description": "Легенда",
+      "image": "",
+      "category": 2,
+      "price": 15000,
+      "create_date": "2024-01-20T07:38:58.026Z",
+      "change_date": "2024-01-20T07:38:58.026Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Иж",
+      "description": "Надежный и неприхотливый",
+      "image": "",
+      "category": 2,
+      "price": 12000,
+      "create_date": "2024-01-20T07:42:10.607Z",
+      "change_date": "2024-01-20T07:42:10.607Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Казанка",
+      "description": "Без комментариев",
+      "image": "",
+      "category": 3,
+      "price": 5000,
+      "create_date": "2024-01-20T07:43:00.167Z",
+      "change_date": "2024-01-20T07:43:00.167Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "ЗиЛ",
+      "description": "Вечный трудяга",
+      "image": "",
+      "category": 4,
+      "price": 50000,
+      "create_date": "2024-01-20T07:42:10.607Z",
+      "change_date": "2024-01-20T07:42:10.607Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "ГАЗель",
+      "description": "В семье не без урода...",
+      "image": "",
+      "category": 4,
+      "price": 40000,
+      "create_date": "2024-01-20T07:42:10.607Z",
+      "change_date": "2024-01-20T07:42:10.607Z"
+    }
+  }
+]
