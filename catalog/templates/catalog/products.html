@@ -9,6 +9,7 @@
                    <div class="card-body">
                        <p class="card-text">{{ object.name|title }}</p>
                        <p>{{ object.price }}</p>
+                       <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:product_item' object:pk %}" role="button">Подробнее</a>
                    </div>
                </div>
            </div>
