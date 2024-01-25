@@ -1,7 +1,7 @@
-<div class="col-md-4">
+<div class="p-3 col-md-4">
     <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-        <h4>{{ object.name }}</h4>
-        <p></p>
+        <h3>{{ object.name }}</h3>
+        <p class="card-text">{{ object.description }}</p>
         <a href="{% url 'catalog:products' object.pk %}" class="btn btn-outline-secondary" type="button">Смотреть модели</a>
     </div>
 </div>

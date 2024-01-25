@@ -36,3 +36,9 @@ def products(request, pk):
     }
     return render(request, 'catalog/products.html', context)
 
+
+def product_item(request, pk):
+    context = {
+        'object': Product.objects.get(pk=pk),
+    }
+    return render(request, 'catalog/product_item.html', context)

@@ -1,32 +1,32 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-        <div class="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div class="p-4 mb-1 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">The Catalog</h1>
-                <p class="col-md-8 fs-4">Наш магазин предлагает Вам выбор из широкого круга транспортных средств. У нас Вы найдете именно то, что Вам нужно.<br><br></p>
-                <button type="button" class="btn active btn-lg" data-bs-toggle="button" aria-pressed="true">Узнать подробнее</button>
+                <p class="col-md-8 fs-4">Наш сайт предлагает Вам выбор из широкого круга транспортных средств. У нас Вы найдете именно то, что Вам нужно.<br><br></p>
+                <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:category_products' %}" role="button">Перейти в каталог</a>
             </div>
         </div>
 
         <div class="row align-items-md-stretch">
             <div class="col-md-6">
                 <div class="h-100 p-5 text-bg-dark rounded-3">
-                    <h2>Найти информацию</h2>
-                    <p>Выберите категорию, либо введите запрос, чтобы найти информацию.</p>
+                    <h2>Добавить объявление</h2>
+                    <p>Заполните форму и нажмите кнопку "Добавить"</p>
                     <form method="post">
                         {% csrf_token %}
                         <select name="value" class="form-select" aria-label="Default select example">
                             <option selected>Выберите категорию</option>
-                            <option value="1">IT</option>
-                            <option value="2">SMM</option>
-                            <option value="3">Менеджмент</option>
-                            <option value="4">Бурятский полк конных водолазов:)</option>
+                            <option value="1">Автомобили</option>
+                            <option value="2">Мотоциклы</option>
+                            <option value="3">Лодки</option>
+                            <option value="4">Грузовики</option>
                         </select><br>
                         <div class="mb-3">
                             <input name="query" class="form-control" type="text" placeholder="Введите запрос или ключевое слово" aria-label="default input example">
                         </div>
-                        <button class="btn btn-outline-light" type="submit">Искать</button>
+                        <button class="btn btn-outline-light" type="submit">Добавить</button>
                     </form>
                 </div>
             </div>

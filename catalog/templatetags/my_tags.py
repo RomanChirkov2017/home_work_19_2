@@ -2,8 +2,9 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter()
-def mymedia(val):
+def my_media(val):
     if val:
         return f'/media/{val}'
 
