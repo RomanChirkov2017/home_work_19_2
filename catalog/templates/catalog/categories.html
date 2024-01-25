@@ -1,7 +1,7 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <h1>Каталог</h1>
+    <h1 class="text-center">{{ title }}</h1>
     <div class="row">
         {% for object in object_list %}
             {% include 'catalog/includes/inc_category.html' %}

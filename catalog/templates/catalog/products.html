@@ -1,6 +1,7 @@
 {% extends 'catalog/base.html' %}
 {% load my_tags %}
 {% block content %}
+    <h1 class="text-center">{{ title }}</h1><br>
     <div class="row">
         {% for object in object_list %}
            <div class="col-md-4">
@@ -8,8 +9,8 @@
                    <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
                    <div class="card-body">
                        <p class="card-text">{{ object.name|title }}</p>
-                       <p>{{ object.price }}</p>
-                       <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:product_item' object:pk %}" role="button">Подробнее</a>
+                       <p>{{ object.price }} руб.</p>
+                       <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:product_item' object.pk %}" role="button">Подробнее</a>
                    </div>
                </div>
            </div>
