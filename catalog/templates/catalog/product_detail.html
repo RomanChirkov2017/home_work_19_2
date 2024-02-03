@@ -3,15 +3,14 @@
 {% block content %}
     <div class="row">
             <div class="col-md-6">
-                <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <div class="h-100 p-5 bg-body-tertiary">
                     <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                    <h3>{{ object.name }}</h3>
-                    <p>Цена: {{ object.price }} руб.</p>
-                    <p>Описание: {{ object.description }}</p>
+                <div class="h-100 p-5 bg-body-tertiary">
+                    <span style="font-size:24px;">Цена: {{ object.price }} руб.</span><br><br>
+                    <span style="font-size:24px;">Описание: {{ object.description }}</span>
                 </div>
             </div>
     </div>

@@ -1,17 +1,15 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold text-body-emphasis">Контакты</h1>
-            <p class="col-md-8 fs-4 text-body-emphasis">Наш адрес: <br> 2 market lane, Wellington Central, Wellington 6011, Новая Зеландия.</p>
-            <p class="col-md-8 fs-4 text-body-emphasis">Наш телефон: <br> +64-4-777-7777</p>
-        </div>
-    </div>
-
-    <div class="row align-items-md-stretch">
+    <div class="row">
         <div class="col-md-6">
-            <div class="h-100 p-5 text-bg-dark rounded-3">
+            <h2><u>Наш адрес:</u></h2><br>
+            <h4 class="col-md-8 fs-4 text-body-emphasis"> 2 market lane, Wellington Central, Wellington 6011, Новая Зеландия.</h4><br><br>
+            <h2><u>Наш телефон:</u></h2><br>
+            <h4 class="col-md-8 fs-4 text-body-emphasis"> +64-4-777-7777</h4>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 text-bg-dark rounded-3">
                 <h2>Обратная связь</h2>
                 <p>Заполните форму, и наши консультанты свяжутся с Вами.</p>
                 <form method="post">
@@ -28,7 +26,7 @@
                         <label for="exampleInputPhone1" class="form-label">Телефон:</label>
                         <input name="phone" type="tel" class="form-control" id="exampleInputPhone1" aria-describedby="telHelp">
                     </div>
-                    <button type="submit" class="btn btn-outline-light">Отправить</button>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
             </div>
         </div>

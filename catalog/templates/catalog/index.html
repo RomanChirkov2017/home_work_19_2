@@ -1,11 +1,10 @@
 {% extends 'catalog/base.html' %}
 
 {% block content %}
-        <div class="p-4 mb-1 bg-body-tertiary rounded-3">
+        <div class="p-1 mb-1 bg-body-tertiary rounded-3">
             <div class="container-fluid py-5">
-                <h1 class="display-5 fw-bold">The Catalog</h1>
-                <p class="col-md-8 fs-4">Наш сайт предлагает Вам выбор из широкого круга транспортных средств. У нас Вы найдете именно то, что Вам нужно.<br><br></p>
-                <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:category_products' %}" role="button">Перейти в каталог</a>
+                <span style="font-size:30px;">Наш сайт предлагает Вам выбор из широкого круга транспортных средств. У нас Вы найдете именно то, что Вам нужно.</span><br><br>
+                <p><a class="btn btn-primary btn-lg" href="{% url 'catalog:category_products' %}" role="button">Перейти в каталог &raquo;</a></p>
             </div>
         </div>
 
@@ -22,7 +21,7 @@
                             <option value="2">Мотоциклы</option>
                             <option value="3">Лодки</option>
                             <option value="4">Грузовики</option>
-                        </select><br>
+                        </select><br><br>
                         <div class="mb-3">
                             <input name="query" class="form-control" type="text" placeholder="Введите запрос или ключевое слово" aria-label="default input example">
                         </div>

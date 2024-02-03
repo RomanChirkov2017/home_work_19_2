@@ -1,0 +1,27 @@
+{% extends 'catalog/base.html' %}
+{% load my_tags %}
+{% block content %}
+    <div class="row">
+        <div class="col-12 mb-1">
+            <a href="{% url 'catalog:blog' %}" class="btn btn-outline-primary">&larr;Назад</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary">
+                <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="h-100 p-5 bg-body-tertiary">
+                <span style="font-size:24px;">{{ object.content }}</span>
+                <br><br>
+                <p>{{ object.create_date }}</p>
+                <p>Просмотры: {{ object.view_count }}</p>
+                <p>Slug: {{ object.slug }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
