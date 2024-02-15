@@ -1,9 +1,11 @@
+from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 
-from catalog.models import Category, Product, Blog
+from catalog.forms import ProductForm, VersionForm
+from catalog.models import Category, Product, Blog, Version
 
 
 class IndexView(TemplateView):
@@ -12,13 +14,6 @@ class IndexView(TemplateView):
         'title': 'Главная'
     }
 
-#def index(request):
-#    if request.method == 'POST':
-#        value = request.POST.get('value')
-#        query = request.POST.get('query')
-#        print(f"{value}, {query}")
-#    return render(request, 'catalog/index.html')
-
 
 class ContactView(TemplateView):
     template_name = 'catalog/contacts.html'
@@ -26,27 +21,12 @@ class ContactView(TemplateView):
         'title': 'Контакты'
     }
 
-#def contacts(request):
-#    if request.method == 'POST':
-#        name = request.POST.get('name')
-#        email = request.POST.get('email')
-#        phone = request.POST.get('phone')
-#        print(f"{name}, {email}, {phone}")
-#    return render(request, 'catalog/contacts.html')
-
 
 class CategoryListView(ListView):
     model = Category
     extra_context = {
         'title': 'Все категории'
     }
-
-#def category_products(request):
-#    context = {
-#        'object_list': Category.objects.all(),
-#        'title': 'Все категории'
-#    }
-#    return render(request, 'catalog/category_list.html', context)
 
 
 class ProductListView(ListView):
@@ -62,15 +42,43 @@ class ProductListView(ListView):
         category_item = Category.objects.get(pk=self.kwargs.get('pk'))
         context_data['category_pk'] = category_item.pk
         context_data['title'] = f'{category_item.name}'
+        for product in context_data.get('object_list'):
+            product.version = product.version_set.filter(is_active=True).first()
         return context_data
 
-#def products(request, pk):
-#    category_item = Category.objects.get(pk=pk)
-#    context = {
-#        'object_list': Product.objects.filter(category_id=pk),
-#        'title': f'{category_item.name}'
-#    }
-#    return render(request, 'catalog/product_list.html', context)
+
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('catalog:category_products')
+
+
+class ProductUpdateView(UpdateView):
+    model = Product
+    form_class = ProductForm
+
+    def get_success_url(self):
+        return reverse('catalog:products', args=[self.object.category.pk])
+
+    def get_context_data(self, **kwargs):
+        context_data = super().get_context_data(**kwargs)
+        VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+        if self.request.method == 'POST':
+            formset = VersionFormset(self.request.POST, instance=self.object)
+        else:
+            formset = VersionFormset(instance=self.object)
+        context_data['formset'] = formset
+        return context_data
+
+    def form_valid(self, form):
+        context_data = self.get_context_data()
+        formset = context_data['formset']
+        self.object = form.save()
+
+        if formset.is_valid():
+            formset.instance = self.object
+            formset.save()
+        return super().form_valid(form)
 
 
 class ProductDetailView(DetailView):
@@ -84,11 +92,10 @@ class ProductDetailView(DetailView):
 
         return context_data
 
-#def product_item(request, pk):
-#    context = {
-#        'object': Product.objects.get(pk=pk),
-#    }
-#    return render(request, 'catalog/product_detail.html', context)
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('catalog:category_products')
 
 
 class BlogListView(ListView):

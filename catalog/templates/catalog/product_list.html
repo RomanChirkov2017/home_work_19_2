@@ -3,16 +3,23 @@
 {% block content %}
     <div class="row">
         {% for object in object_list %}
-           <div class="col-md-4">
-               <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                   <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
-                   <div class="card-body">
-                       <p class="card-text">{{ object.name|title }}</p>
-                       <p>{{ object.price }} руб.</p>
-                       <a class="btn btn-outline-secondary btn-lg" href="{% url 'catalog:product_item' object.pk %}" role="button">Подробнее</a>
-                   </div>
-               </div>
-           </div>
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{ object.name|title }}</p>
+                        <p>{{ object.price }} руб.</p>
+                        {% if object.version %}
+                            Версия: {{ object.version }}
+                        {% endif %}
+
+                        <hr>
+                        <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_item' object.pk %}">Смотреть</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_update' object.pk %}">Изменить</a>
+                        <a class="btn btn-outline-danger float-right btn-sm" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
+                    </div>
+                </div>
+            </div>
         {% endfor %}
     </div>
 {% endblock %}

@@ -1,6 +1,5 @@
 from django.db import models
 
-
 NULLABLE = {'blank': True, 'null': True}
 
 
@@ -33,6 +32,28 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         ordering = ('name',)
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name='Продукт')
+    version_number = models.DecimalField(max_digits=5, decimal_places=1, verbose_name='Номер версии')
+    name = models.CharField(max_length=250, verbose_name='Название версии')
+    is_active = models.BooleanField(default=True, verbose_name='Признак текущей версии')
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        print(self.id)
+        if self.is_active:
+            Version.objects.filter(product=self.product).exclude(id=self.id).update(is_active=False)
+
+
+
+    def __str__(self):
+        return f'{self.name} {self.version_number} ({self.product})'
+
+    class Meta:
+        verbose_name = 'Версия'
+        verbose_name_plural = 'Версии'
 
 
 class Blog(models.Model):
