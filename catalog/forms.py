@@ -37,7 +37,7 @@ class VersionForm(StyleFormMixin, forms.ModelForm):
 
     class Meta:
         model = Version
-        fields = ('product', 'version_number', 'name', 'is_active')
+        fields = ('product', 'version_number', 'name', 'is_active',)
 
     def clean_name(self):
         cleaned_data = self.cleaned_data['name']

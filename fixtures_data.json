@@ -37,11 +37,11 @@
     "fields": {
       "name": "Жигули",
       "description": "Ведро с болтами",
-      "image": "",
+      "image": "catalog/Jiguar.png",
       "category": 1,
       "price": 20000,
       "create_date": "2024-01-20T07:35:53.976Z",
-      "change_date": "2024-01-20T07:35:53.976Z"
+      "change_date": "2024-02-15T14:45:46.729Z"
     }
   },
   {
@@ -50,11 +50,11 @@
     "fields": {
       "name": "Волга",
       "description": "Большое и комфортное ведро с болтами",
-      "image": "",
+      "image": "catalog/Volga_6VDCzmm.png",
       "category": 1,
       "price": 35000,
       "create_date": "2024-01-20T07:36:47.652Z",
-      "change_date": "2024-01-20T07:36:47.652Z"
+      "change_date": "2024-02-15T15:00:59.567Z"
     }
   },
   {
@@ -63,11 +63,11 @@
     "fields": {
       "name": "Урал",
       "description": "Легенда",
-      "image": "",
+      "image": "catalog/Ural_moto.png",
       "category": 2,
       "price": 15000,
       "create_date": "2024-01-20T07:38:58.026Z",
-      "change_date": "2024-01-20T07:38:58.026Z"
+      "change_date": "2024-01-25T01:14:09.762Z"
     }
   },
   {
@@ -76,11 +76,11 @@
     "fields": {
       "name": "Иж",
       "description": "Надежный и неприхотливый",
-      "image": "",
+      "image": "catalog/Izh_moto.png",
       "category": 2,
       "price": 12000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-01-20T07:42:10.607Z"
+      "change_date": "2024-02-15T14:41:15.388Z"
     }
   },
   {
@@ -88,12 +88,12 @@
     "pk": 5,
     "fields": {
       "name": "Казанка",
-      "description": "Без комментариев",
-      "image": "",
+      "description": "Яхта для бедных",
+      "image": "catalog/kazanka.jpg",
       "category": 3,
       "price": 5000,
       "create_date": "2024-01-20T07:43:00.167Z",
-      "change_date": "2024-01-20T07:43:00.167Z"
+      "change_date": "2024-01-25T01:14:00.836Z"
     }
   },
   {
@@ -102,11 +102,11 @@
     "fields": {
       "name": "ЗиЛ",
       "description": "Вечный трудяга",
-      "image": "",
+      "image": "catalog/ZiL_130.jpg",
       "category": 4,
       "price": 50000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-01-20T07:42:10.607Z"
+      "change_date": "2024-02-15T14:58:36.337Z"
     }
   },
   {
@@ -115,11 +115,173 @@
     "fields": {
       "name": "ГАЗель",
       "description": "В семье не без урода...",
-      "image": "",
+      "image": "catalog/Gazelle.png",
       "category": 4,
       "price": 40000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-01-20T07:42:10.607Z"
+      "change_date": "2024-02-15T14:27:33.686Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "name": "Победа",
+      "description": "Мечта коллекционера",
+      "image": "",
+      "category": 1,
+      "price": 150000,
+      "create_date": "2024-02-08T06:28:34.808Z",
+      "change_date": "2024-02-14T13:16:19.192Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "version_number": "1.0",
+      "name": "3110",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "version_number": "2.0",
+      "name": "вторая",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 7,
+      "version_number": "1.1",
+      "name": "Next",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 6,
+    "fields": {
+      "product": 6,
+      "version_number": "1.2",
+      "name": "131",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 7,
+    "fields": {
+      "product": 1,
+      "version_number": "3.0",
+      "name": "test",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 8,
+    "fields": {
+      "product": 1,
+      "version_number": "4.0",
+      "name": "test2",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 9,
+    "fields": {
+      "product": 2,
+      "version_number": "1.1",
+      "name": "3111",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 10,
+    "fields": {
+      "product": 2,
+      "version_number": "4.0",
+      "name": "3112",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 11,
+    "fields": {
+      "product": 6,
+      "version_number": "132.0",
+      "name": "test3",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 12,
+    "fields": {
+      "product": 2,
+      "version_number": "5.0",
+      "name": "test4",
+      "is_active": false
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 13,
+    "fields": {
+      "product": 2,
+      "version_number": "231.0",
+      "name": "jsdhg",
+      "is_active": true
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 5,
+    "fields": {
+      "name": "Автозавод «Москвич» получил иск от корейцев",
+      "slug": "avtozavod-moskvich-poluchil-isk-ot-korejtsev",
+      "content": "Южнокорейский производитель оснастки Silla Engineering подал судебный иск против автозавода «Москвич», об этом сообщает телеграм-канал «Автопоток».\r\n\r\nSilla требует от столичного предприятия 128 млн рублей за неоплаченные поставки по двум контрактам от 2020 года. В те времена автозавод назывался «Renault Россия», однако претензии правомочны, поскольку юрлицо осталось прежним — сменились владелец и наименование. Судьба пресс-форм неизвестна.\r\n\r\nСудебное заседание в Арбитражном суде Москвы запланировано на 14 февраля. Производство автомобилей Renault в столице прекратилось в марте 2022 года. \r\n\r\n3 июня 2022-го ЗАО «Рено Россия» было переименовано в АО «Московский автомобильный завод “Москвич”». Этому предшествовало соглашение о передаче российских активов Renault государству и правительству Москвы.",
+      "image": "catalog/MoskvichNew.jpg",
+      "create_date": "2024-02-03T03:18:06.651Z",
+      "is_published": true,
+      "view_count": 12
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 6,
+    "fields": {
+      "name": "В структуре Mazda воссоздано подразделение по роторным моторам",
+      "slug": "v-strukture-mazda-vossozdano-podrazdelenie-po-rotornyim-motoram",
+      "content": "1 февраля Mazda Motor официально объявила о воссоздании инженерного подразделения по разработке роторно-поршневых двигателей RE Development Group. В него вошли 36 инженеров-конструкторов, многие из которых работали над РПД в Mazda десяток и больше лет назад, когда компания выпускала спортивные автомобили линейки RX, оснащавшиеся двигателями Ванкеля.\r\n\r\nЖдать ли от Mazda возрождения купе RX или чего-то иного столь же волнующего, в компании не раскрывают. Но повод для оптимизма дал глава отдела разработок Mazda Motor Итиро Хиросе — он пообещал прорыв в исследованиях и разработке двигателей Ванкеля, а также анонсировал выпуск «воодушевляющих» автомобилей.\r\n\r\nОсновными направлениями работы отдела назначены проектирование электрогенерирующих систем на базе РПД, их адаптация под регулирующие нормы и изучение возможности применения углеродно-нейтрального топлива.\r\n\r\nАвтомобили с роторно-поршневыми двигателями Mazda предлагала на рынке с 1967 по 2012 год. В 2023-м РПД вернулся в продуктовую гамму Мазды — в составе последовательной гибридной установки кроссовера Mazda MX-30 e-SKYACTIV R-EV.",
+      "image": "catalog/RPD.jpg",
+      "create_date": "2024-02-03T03:40:44.703Z",
+      "is_published": true,
+      "view_count": 10
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 12,
+    "fields": {
+      "name": "Tesla вновь отзывает 2,2 миллиона электромобилей",
+      "slug": "tesla-vnov-otzyivaet-22-milliona-elektromobilej",
+      "content": "Компания Tesla Inc. по требованию Национального агентства безопасности дорожного движения США (NHTSA) отзывает для устранения дефекта 2,2 миллиона произведенных ею электромобилей.\r\n\r\nСервисная кампания затрагивает практически все Tesla моделей Model 3, Model Y, Model S, Model X и Cybertruck в США.\r\n\r\nПричина отзыва в том, что регулятор счел недостаточно разборчивыми предупреждающие сообщения на мониторе о задействовании тормозов, АБС и стояночного тормоза при езде в тех ситуациях, когда задействована система автоматического вождения Tesla Autopilot.\r\n\r\nДля исправления проблемы в Tesla выпустили бесплатное программное обновление, загружаемое через общедоступные информационные сети. \r\n\r\nЭта отзывная кампания фактически продолжение столь же масштабной кампании двухмесячной давности, когда регулятор потребовал от Tesla увеличить интенсивность и заметность предупреждений об опасности отвлекающимся при езде в режиме Autopilot водителям.",
+      "image": "catalog/TeslaNews.jpg",
+      "create_date": "2024-02-03T08:04:55.011Z",
+      "is_published": true,
+      "view_count": 6
     }
   }
 ]
