@@ -3,6 +3,7 @@
 {% block content %}
     <div class="row">
         {% for object in object_list %}
+        {% if object.is_published == True %}
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{ object.image|my_media }}" alt="Card image cap">
@@ -16,13 +17,16 @@
 
                         <hr>
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_item' object.pk %}">Смотреть</a>
-                        {% if user.is_authenticated %}
+                        {% if user.is_authenticated and perms.catalog.change_product %}
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_update' object.pk %}">Изменить</a>
+                        {% if user == object.owner %}
                         <a class="btn btn-outline-danger float-right btn-sm" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
+                        {% endif %}
                         {% endif %}
                     </div>
                 </div>
             </div>
+        {% endif %}
         {% endfor %}
     </div>
 {% endblock %}

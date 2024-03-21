@@ -53,3 +53,10 @@ class BlogForm(StyleFormMixin, forms.ModelForm):
     class Meta:
         model = Blog
         fields = ('name', 'content', 'image', 'is_published',)
+
+
+class ModeratorForm(StyleFormMixin, forms.ModelForm):
+
+    class Meta:
+        model = Product
+        fields = ('name', 'description', 'category', 'is_published',)

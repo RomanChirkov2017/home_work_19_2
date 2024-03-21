@@ -1,10 +1,11 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.forms import inlineformset_factory
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ModeratorForm
 from catalog.models import Category, Product, Blog, Version
 
 
@@ -47,7 +48,7 @@ class ProductListView(ListView):
         return context_data
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:category_products')
@@ -60,9 +61,21 @@ class ProductCreateView(CreateView):
         return super().form_valid(form)
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Product
-    form_class = ProductForm
+    permission_required = 'catalog.change_product'
+
+    def get_form_class(self):
+        user = self.request.user
+        product = self.get_object()
+        if user.is_authenticated:
+            if user == product.owner:
+                return ProductForm
+            elif user.has_perm('catalog.change_product'):
+                return ModeratorForm
+        else:
+            raise PermissionError
+
 
     def get_success_url(self):
         return reverse('catalog:products', args=[self.object.category.pk])
@@ -100,9 +113,10 @@ class ProductDetailView(DetailView):
         return context_data
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(PermissionRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:category_products')
+    permission_required = 'catalog.delete_product'
 
 
 class BlogListView(ListView):

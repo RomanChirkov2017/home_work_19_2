@@ -7,7 +7,7 @@
                 <p><a class="btn btn-primary btn-lg" href="{% url 'catalog:category_products' %}" role="button">Перейти в каталог &raquo;</a></p>
             </div>
         </div>
-
+        {% if user.is_authenticated %}
         <div class="row align-items-md-stretch">
             <div class="col-md-6">
                 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
@@ -17,5 +17,6 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 {% endblock %}
 
