@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     'catalog',
     'users',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,6 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = 'fuckup@oscarbot.ru'
 EMAIL_HOST_PASSWORD = 'AsTSNVv7pun9'
 EMAIL_USE_SSL = True
+
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_RUN_NOW_TIMEOUT = 25

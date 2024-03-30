@@ -17,7 +17,7 @@
 
                         <hr>
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_item' object.pk %}">Смотреть</a>
-                        {% if user.is_authenticated and perms.catalog.change_product %}
+                        {% if user == object.owner or perms.catalog.change_product %}
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_update' object.pk %}">Изменить</a>
                         {% if user == object.owner %}
                         <a class="btn btn-outline-danger float-right btn-sm" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
