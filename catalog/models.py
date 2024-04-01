@@ -36,6 +36,11 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
         ordering = ('name',)
+        permissions = [
+            ('change_is_published', 'Can change is published'),
+            ('change_product_description', 'Can change product description'),
+            ('change_product_category', 'Can change product category'),
+        ]
 
 
 class Version(models.Model):

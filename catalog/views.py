@@ -71,7 +71,7 @@ class ProductUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView)
         if user.is_authenticated:
             if user == product.owner:
                 return ProductForm
-            elif user.has_perm('catalog.change_product'):
+            elif user.has_perm('catalog.change_product_description'):
                 return ModeratorForm
         else:
             raise PermissionError

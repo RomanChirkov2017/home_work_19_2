@@ -41,7 +41,9 @@
       "category": 1,
       "price": 20000,
       "create_date": "2024-01-20T07:35:53.976Z",
-      "change_date": "2024-02-15T14:45:46.729Z"
+      "change_date": "2024-03-11T04:14:49.138Z",
+      "owner": 14,
+      "is_published": true
     }
   },
   {
@@ -54,7 +56,9 @@
       "category": 1,
       "price": 35000,
       "create_date": "2024-01-20T07:36:47.652Z",
-      "change_date": "2024-02-15T15:00:59.567Z"
+      "change_date": "2024-03-11T04:23:45.933Z",
+      "owner": 2,
+      "is_published": true
     }
   },
   {
@@ -67,7 +71,9 @@
       "category": 2,
       "price": 15000,
       "create_date": "2024-01-20T07:38:58.026Z",
-      "change_date": "2024-01-25T01:14:09.762Z"
+      "change_date": "2024-03-11T04:26:15.263Z",
+      "owner": null,
+      "is_published": true
     }
   },
   {
@@ -75,12 +81,14 @@
     "pk": 4,
     "fields": {
       "name": "Иж",
-      "description": "Надежный и неприхотливый",
+      "description": "Надежный и неприхотливый!",
       "image": "catalog/Izh_moto.png",
       "category": 2,
       "price": 12000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-02-15T14:41:15.388Z"
+      "change_date": "2024-03-30T05:09:36.418Z",
+      "owner": 11,
+      "is_published": true
     }
   },
   {
@@ -93,7 +101,9 @@
       "category": 3,
       "price": 5000,
       "create_date": "2024-01-20T07:43:00.167Z",
-      "change_date": "2024-01-25T01:14:00.836Z"
+      "change_date": "2024-03-11T04:26:05.879Z",
+      "owner": null,
+      "is_published": true
     }
   },
   {
@@ -106,7 +116,9 @@
       "category": 4,
       "price": 50000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-02-15T14:58:36.337Z"
+      "change_date": "2024-03-11T04:25:54.620Z",
+      "owner": null,
+      "is_published": true
     }
   },
   {
@@ -119,20 +131,39 @@
       "category": 4,
       "price": 40000,
       "create_date": "2024-01-20T07:42:10.607Z",
-      "change_date": "2024-02-15T14:27:33.686Z"
+      "change_date": "2024-03-11T04:25:45.170Z",
+      "owner": null,
+      "is_published": true
     }
   },
   {
     "model": "catalog.product",
-    "pk": 15,
+    "pk": 16,
     "fields": {
       "name": "Победа",
       "description": "Мечта коллекционера",
-      "image": "",
+      "image": "catalog/Pobeda.png",
       "category": 1,
-      "price": 150000,
-      "create_date": "2024-02-08T06:28:34.808Z",
-      "change_date": "2024-02-14T13:16:19.192Z"
+      "price": 120000,
+      "create_date": "2024-02-26T07:17:07.289Z",
+      "change_date": "2024-03-11T06:30:42.924Z",
+      "owner": 2,
+      "is_published": true
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "name": "Nissan Skyline GT-R",
+      "description": "Восьмое чудо света, true JDM",
+      "image": "catalog/skyline-34-gtr.png",
+      "category": 1,
+      "price": 1000000,
+      "create_date": "2024-03-11T06:02:06.694Z",
+      "change_date": "2024-03-11T06:26:47.713Z",
+      "owner": 13,
+      "is_published": true
     }
   },
   {
@@ -255,7 +286,7 @@
       "image": "catalog/MoskvichNew.jpg",
       "create_date": "2024-02-03T03:18:06.651Z",
       "is_published": true,
-      "view_count": 12
+      "view_count": 14
     }
   },
   {
@@ -268,7 +299,7 @@
       "image": "catalog/RPD.jpg",
       "create_date": "2024-02-03T03:40:44.703Z",
       "is_published": true,
-      "view_count": 10
+      "view_count": 11
     }
   },
   {
@@ -281,7 +312,7 @@
       "image": "catalog/TeslaNews.jpg",
       "create_date": "2024-02-03T08:04:55.011Z",
       "is_published": true,
-      "view_count": 6
+      "view_count": 7
     }
   }
 ]
