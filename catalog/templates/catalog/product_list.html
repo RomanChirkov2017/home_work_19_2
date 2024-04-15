@@ -19,7 +19,7 @@
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_item' object.pk %}">Смотреть</a>
                         {% if user == object.owner or perms.catalog.change_product %}
                         <a class="btn btn-outline-primary btn-sm" href="{% url 'catalog:product_update' object.pk %}">Изменить</a>
-                        {% if user == object.owner %}
+                        {% if user == object.owner or user.is_superuser == True %}
                         <a class="btn btn-outline-danger float-right btn-sm" href="{% url 'catalog:product_delete' object.pk %}">Удалить</a>
                         {% endif %}
                         {% endif %}

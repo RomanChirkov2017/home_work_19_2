@@ -7,6 +7,7 @@ from pytils.translit import slugify
 
 from catalog.forms import ProductForm, VersionForm, ModeratorForm
 from catalog.models import Category, Product, Blog, Version
+from catalog.services import get_categories
 
 
 class IndexView(TemplateView):
@@ -28,6 +29,9 @@ class CategoryListView(ListView):
     extra_context = {
         'title': 'Все категории'
     }
+
+    def get_queryset(self):
+        return get_categories()
 
 
 class ProductListView(ListView):
